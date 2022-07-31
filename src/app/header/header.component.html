@@ -1,0 +1,24 @@
+<!-- CABECERA -->
+
+<header id="header">
+    <!-- LOGO -->
+    <div class="center">
+        <div id="logo">
+            <img src="./assets/img/Angular.svg" alt="logo Angular">
+            <span id="brand"><strong>Angular</strong></span>
+        </div>
+        <!-- MENU DE NAVEGACION -->
+        <nav id="menu">
+            <ul>
+                <li><a [routerLink]="['home']" [routerLinkActive]="['active']">Inicio</a></li>
+                <li><a [routerLink]="['blog']" [routerLinkActive]="['active']">Blog</a></li>
+                <li><a [routerLink]="['formulario']" [routerLinkActive]="['active']">Formulario</a></li>
+                <li><a [routerLink]="['pagina']" [routerLinkActive]="['active']">Pagina 1</a></li>
+                <li><a [routerLink]="['pruebas']" [routerLinkActive]="['active']">Pagina 2</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+</header>
+<div class=".clearfix"></div>
+<!-- CABECERA -->

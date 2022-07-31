@@ -1,0 +1,41 @@
+<app-slider [sliderText]="'FORMULARIO'" [size]="'small'"></app-slider>
+
+<div class="center">
+  <section id="content">
+    <form class="form" #formUser="ngForm" (ngSubmit)="onSubmit(formUser)">
+
+      <label for="name">Nombre</label>
+      <input type="text" name="name" id="name" #name="ngModel" [(ngModel)]="user.name" required>
+      <span *ngIf="!name.valid && name.touched">
+        Ingrese los datos correctamente
+      </span>
+
+      <label for="surname">Apellido</label>
+      <input type="text" name="surname" id="surname" #surname="ngModel" [(ngModel)]="user.surname" required>
+      <span *ngIf="!surname.valid && surname.touched">
+        Ingrese los datos correctamente
+      </span>
+
+      <label for="bio">Biografia</label>
+      <textarea name="bio" id="" cols="30" rows="10" #bio="ngModel" [(ngModel)]="user.bio" required></textarea>
+      <span *ngIf="!bio.valid &&  bio.touched">
+        Ingrese los datos correctamente
+      </span>
+
+      <div class="radios">
+          <input type="radio" name="genero" id="men" value="Hombre" #genero="ngModel" [(ngModel)]="user.gender" required>Hombre
+          <input type="radio" name="genero" id="women" value="Mujer" #genero="ngModel" [(ngModel)]="user.gender">Mujer
+          <input type="radio" name="genero" id="other" value="Otro" #genero="ngModel" [(ngModel)]="user.gender">Otro
+          <span *ngIf="!genero.valid && genero.touched">
+            Ingrese los datos correctamente
+          </span>
+      </div>
+      
+
+      <input type="submit" value="Enviar" class="button" [disabled]="formUser.invalid" [ngClass]="{'button-disabled': formUser.invalid}">
+
+    </form>
+  </section>
+  <!-- <div class="clearfix"></div> -->
+  <app-sidebar></app-sidebar>
+</div>

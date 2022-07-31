@@ -1,0 +1,15 @@
+<app-slider [sliderText]="'BUSQUEDA'" [size]="'small'"></app-slider>
+
+<div class="center">
+
+  <section id="content">
+   <h2>Archivos encontrados</h2>
+   <div *ngIf="articles.length == 0"><h3>No se encontraron resultados con su busqueda</h3></div>
+   <app-articles [articles]="articles" [url_img]="url_img">
+       
+   </app-articles>
+  </section>
+
+  <app-sidebar></app-sidebar>
+</div>
+

@@ -1,0 +1,33 @@
+
+
+<div class="center">
+  <section id="content">
+    <h1>Crear Articulo</h1>
+    <form class="form" #formArticle="ngForm" (ngSubmit)="onSubmit(formArticle)">
+
+        <label for="title">Titulo</label>
+        <input type="text" name="title" id="title" #title="ngModel" [(ngModel)]="article.title" required>
+        <span *ngIf="!title.valid && title.touched">
+          Ingrese los datos correctamente
+        </span>
+  
+  
+        <label for="content">Contenido</label>
+        <textarea name="content" id="" cols="30" rows="10" #content="ngModel" [(ngModel)]="article.content" required></textarea>
+        <span *ngIf="!content.valid &&  content.touched">
+          Ingrese los datos correctamente
+        </span>
+
+        
+        <angular-file-uploader
+            [config]="afuConfig"
+            (ApiResponse)="docUpload($event)">
+        </angular-file-uploader>
+        
+        <input type="submit" value="Enviar" class="button" [disabled]="formArticle.invalid" [ngClass]="{'button-disabled': formArticle.invalid}">
+    </form>
+  </section>
+
+  <app-sidebar></app-sidebar>
+</div>
+

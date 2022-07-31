@@ -1,0 +1,23 @@
+<app-slider [sliderText]="'PELICULAS'" [size]="'small'"></app-slider>
+
+<div class="center">
+  <section id="content">
+    <h2>Listado de peliculas</h2>
+    <article class="article-item" *ngFor="let pelicula of peliculas; let i = index;">
+        <img src={{pelicula.image}} alt="paisaje">
+        <h2>{{pelicula.title}}</h2>
+        <span class="date">Hace {{i+3}} minutos</span>
+        <span class="year" [ngClass]="{'year-green': pelicula.year >=2015,'year-red': pelicula.year < 2015 }">
+        {{pelicula.year}}</span>
+    
+    </article>
+  </section>
+
+  <app-sidebar></app-sidebar>
+</div>
+
+
+
+
+
+
